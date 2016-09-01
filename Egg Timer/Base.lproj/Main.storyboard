@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Egg_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUp-cs-HdC">
+                                <frame key="frameInset" minY="28" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Egg TImer" id="ZAG-xv-vfx">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="9TS-TE-NUX">
+                                            <connections>
+                                                <action selector="pause:" destination="BYZ-38-t0r" id="7lp-BG-laM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="Jwp-B5-3LJ">
+                                            <connections>
+                                                <action selector="play:" destination="BYZ-38-t0r" id="6jp-Fr-HBA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZN-Sr-069">
+                                <frame key="frameInset" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="-10" id="pzo-36-g8s">
+                                        <connections>
+                                            <action selector="subtractTime:" destination="BYZ-38-t0r" id="me3-OE-5nS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ru6-ss-zET"/>
+                                    <barButtonItem title="Reset" id="DhG-YZ-F8W">
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" id="2LI-lC-YIw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Js6-ke-0dY"/>
+                                    <barButtonItem title="+10" id="z7G-56-9SZ">
+                                        <connections>
+                                            <action selector="addTime:" destination="BYZ-38-t0r" id="hf7-4b-lbG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="210" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saI-mU-tiE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="9yK-H1-vwJ"/>
+                                    <constraint firstAttribute="height" constant="75" id="pnz-bv-mU0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="saI-mU-tiE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MrT-Dr-AdH"/>
+                            <constraint firstItem="saI-mU-tiE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iaH-bv-k3a"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="saI-mU-tiE" id="zn7-3x-Kli"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
